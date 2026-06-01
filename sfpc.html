@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SFPC Packing List — Loadout</title>
+  <meta name="description" content="SFPC packing list with gear advice for SF Preparation Course.">
+
+  <!-- Sheet & PDF config -->
+  <meta name="sheet-url" content="https://docs.google.com/spreadsheets/d/e/2PACX-1vRKJHzKw0BJ8t8NQCF5wQMN8RHfgeas6GYqqX_1RzQ9phevK4W1GG2mcTuomOiZhxIGo6tutebnwAG6/pub?output=tsv">
+  <meta name="pdf-url"   content="SF/SFPC_Packing_List.pdf">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.html" class="site-logo">
+      <span class="logo-main">Loadout</span>
+      <span class="logo-tag">Don't show up Rucked Up</span>
+    </a>
+    <nav>
+      <a href="army.html">Courses</a>
+      <a href="mailto:director@sofg2.com">Contact</a>
+    </nav>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="sep">/</span>
+    <a href="army.html">Army</a>
+    <span class="sep">/</span>
+    <a href="sof.html">Special Operations</a>
+    <span class="sep">/</span>
+    <a href="sf.html">Special Forces</a>
+    <span class="sep">/</span>
+    <span class="current">SFPC</span>
+  </nav>
+
+  <main class="page-wrapper wide">
+
+    <!-- ── Page Header ── -->
+    <div class="page-header">
+      <p class="page-eyebrow">Special Forces &rsaquo; Preparation Course</p>
+      <h1>SFPC Packing List</h1>
+      <p class="page-subtitle">
+        SF Preparation Course — gear list for getting ready for the pipeline.
+      </p>
+    </div>
+
+    <!-- ── Warning Notice ── -->
+    <div class="notice notice-warning">
+      <strong>Read the official list.</strong> This resource should be compliant with current requirements,
+      but packing lists change. Download the original below and verify every item before you show up.
+      Getting dropped for the wrong gear is not the flex you're looking for.
+    </div>
+
+    <!-- ── Download Bar ── -->
+    <div class="download-bar">
+      <span><strong>Official Source:</strong> SFPC Packing List (PDF)</span>
+      <a id="pdf-link" href="#" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">
+        Download / Print Original &darr;
+      </a>
+    </div>
+
+    <!-- ── Counter Toolbar ── -->
+    <div class="list-toolbar">
+      <div class="counter-group">
+        <div class="counter-item">
+          <div class="counter-dot mandatory"></div>
+          <span class="counter-label">Mandatory remaining:</span>
+          <span class="counter-value" id="counter-mandatory">—</span>
+        </div>
+        <div class="counter-item">
+          <div class="counter-dot optional"></div>
+          <span class="counter-label">Optional remaining:</span>
+          <span class="counter-value" id="counter-optional">—</span>
+        </div>
+      </div>
+
+      <div class="toolbar-actions">
+        <button id="btn-cart-mandatory" class="btn btn-secondary btn-sm">
+          Add Mandatory to Cart
+        </button>
+        <button id="btn-cart-selected" class="btn btn-secondary btn-sm">
+          Add Selected (<span id="selected-count">0</span>)
+        </button>
+      </div>
+    </div>
+
+    <!-- ── Legend ── -->
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-swatch mandatory"></div>
+        <span>Mandatory</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch optional"></div>
+        <span>Optional / Recommended</span>
+      </div>
+      <div class="legend-item" style="margin-left:auto; font-size:0.75rem; color:var(--text-dim);">
+        Blue item names = Amazon link available
+      </div>
+    </div>
+
+    <!-- ── Loading State ── -->
+    <div id="loading-state">
+      <div class="loading-state">
+        <div class="spinner"></div>
+        <div class="loading-text">Loading packing list...</div>
+      </div>
+    </div>
+
+    <!-- ── Packing Table ── -->
+    <div id="table-wrap" class="hidden">
+      <div class="packing-table-wrap">
+        <table class="packing-table" aria-label="SFPC Packing List">
+          <thead>
+            <tr>
+              <th style="width:4px; padding:0;"></th>
+              <th>Item</th>
+              <th class="col-qty">Qty Required</th>
+              <th class="col-adj">Your Qty</th>
+              <th class="col-check">Have It</th>
+            </tr>
+          </thead>
+          <tbody id="packing-tbody">
+            <!-- Populated by packing-list.js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── Cart Panel ── -->
+    <div class="cart-panel hidden" id="cart-panel">
+      <div class="cart-summary">
+        <div class="cart-count" id="selected-count-cart">0</div>
+        <div class="cart-label">items selected<br><span style="color:var(--text-dim); font-size:0.75rem;">Check items above to build your cart</span></div>
+      </div>
+      <div class="cart-actions">
+        <button id="btn-cart-all" class="btn btn-cart">
+          &#128722; Add All Items to Cart
+        </button>
+      </div>
+    </div>
+
+    <div class="notice notice-info mt-lg">
+      <strong>Shipping tip:</strong> Ship to a residential address or a UPS Store for pickup.
+      A small commission is earned at no extra cost to you through Amazon affiliate links.
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-logo">Loadout</div>
+    <div class="footer-tagline">Don't show up Rucked Up.</div>
+    <div class="footer-links">
+      <a href="sf.html">Back to SF Courses</a>
+      <a href="mailto:director@sofg2.com">Suggest a Correction</a>
+    </div>
+    <div class="footer-copy">&copy; 2025 Loadout. All rights reserved.</div>
+    <div class="footer-affiliate">Amazon links use an affiliate tag — you pay nothing extra.</div>
+  </footer>
+
+  <script src="js/packing-list.js"></script>
+
+</body>
+</html>
