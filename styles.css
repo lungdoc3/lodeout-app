@@ -1038,6 +1038,19 @@ img { max-width: 100%; display: block; }
   color: var(--color-text-secondary);
 }
 
+/* ── Amazon Button ──────────────────────────────────────────── */
+.btn-amazon {
+  background: #ff9900;
+  border-color: #e68a00;
+  color: #111;
+  font-weight: 600;
+}
+.btn-amazon:hover {
+  background: #e68a00;
+  color: #111;
+  text-decoration: none;
+}
+
 /* ── Responsive ────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .page-wrapper { padding: var(--space-lg) var(--space-md); }
